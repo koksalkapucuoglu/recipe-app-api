@@ -54,9 +54,6 @@ jobs:
           pip install docker-compose flake8
           pip install -r requirements.txt
 
-      - name: Run migrations
-        run: python ./app/manage.py migrate
-
       - name: Testing and Lint with flake8
         run: |
           docker-compose run app sh -c "python manage.py wait_for_db && python manage.py test && flake8"
