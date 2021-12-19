@@ -31,8 +31,8 @@ class PrivateTagsApiTests(TestCase):
 
     def setUp(self):
         self.user = get_user_model().objects.create_user(
-        'test@example.com',
-        'testpass'
+            'test@example.com',
+            'testpass'
         )
         self.client = APIClient()
         self.client.force_authentication(self.user)
@@ -40,7 +40,7 @@ class PrivateTagsApiTests(TestCase):
     def test_retrieve_tags(self):
         """Test retrieving tags"""
 
-        Tag.objects.create(user=self.user, name='Vegan'):
+        Tag.objects.create(user=self.user, name='Vegan')
         Tag.objects.create(user=self.user, name='Dessert')
 
         res = self.client.get(TAGS_URL)
@@ -67,7 +67,7 @@ class PrivateTagsApiTests(TestCase):
 
     def test_create_tag_successful(self):
         """Test creating a new tag"""
-        payload = {'name'='Test tag'}
+        payload = {'name' = 'Test tag'}
         self.client.post(TAGS_URL, payload)
 
         exist = Tag.objects.filter(
@@ -78,7 +78,7 @@ class PrivateTagsApiTests(TestCase):
 
     def test_create_tag_invalid(self):
         """Test creating a new tag with invalid payload"""
-        payload = {'name'=''}
+        payload = {'name' = ''}
         self.client.post(TAGS_URL, payload)
 
         self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
