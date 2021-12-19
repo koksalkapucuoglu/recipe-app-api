@@ -3,7 +3,6 @@ from rest_framework.response import Response
 from rest_framework import viewsets, mixins, status
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
-from django.shortcuts import get_object_or_404
 
 from core.models import Tag, Ingredient, Recipe
 
@@ -48,6 +47,27 @@ class IngredientViewSet(BaseRecipeAttrViewset):
     """Manage ingredients in the database"""
     queryset = Ingredient.objects.all()
     serializer_class = serializers.IngredientSerializer
+
+    """
+    If we want to retrieve by id or delete by id, we must describe retrieve and
+    destroy because of using GenericViewSet
+
+    from django.shortcuts import get_object_or_404
+
+    def retrieve(self, request, pk=None):
+        item = get_object_or_404(self.queryset, pk=pk, user=self.request.user)
+        serializer = serializers.TagSerializer(item)
+        return Response(serializer.data)
+
+    def destroy(self, request, pk=None):
+        item = get_object_or_404(self.queryset, pk=pk, user=self.request.user)
+        #serializer = serializers.TagSerializer(item)
+        item.delete()
+        return Response(
+            {'detail': 'Ingredient is successfuly deleted'},
+            status=status.HTTP_204_NO_CONTENT
+        )
+    """
 
 
 class RecipeViewSet(viewsets.ModelViewSet):
