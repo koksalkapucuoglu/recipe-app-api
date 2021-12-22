@@ -35,7 +35,7 @@ Recipe App is an API service that developers can use to manage recipes.
 
 #### Create a new user
 
-```http
+```
   POST /api/user/create
 ```
 
@@ -47,7 +47,7 @@ Recipe App is an API service that developers can use to manage recipes.
 
 #### Create authentication token
 
-```http
+```
   POST /api/user/token
 ```
 
@@ -58,7 +58,7 @@ Recipe App is an API service that developers can use to manage recipes.
 
 #### Get own information
 
-```http
+```
   GET /api/user/me
 ```
 
@@ -68,7 +68,7 @@ Recipe App is an API service that developers can use to manage recipes.
 
 #### Create a new tag
 
-```http
+```
   POST /api/recipe/tags
 ```
 
@@ -82,7 +82,7 @@ Recipe App is an API service that developers can use to manage recipes.
 
 #### Get own tag list
 
-```http
+```
   GET /api/recipe/tags/?assigned_only={assigned_only}
 ```
 | Parameter | Type     | Description                |
@@ -96,7 +96,7 @@ Recipe App is an API service that developers can use to manage recipes.
 
 #### Create a new ingredient
 
-```http
+```
   POST /api/recipe/ingredients
 ```
 
@@ -110,7 +110,7 @@ Recipe App is an API service that developers can use to manage recipes.
 
 #### Get own ingredient list
 
-```http
+```
   GET /api/recipe/ingredients/?assigned_only={assigned_only}
 ```
 | Parameter | Type     | Description                |
@@ -124,7 +124,7 @@ Recipe App is an API service that developers can use to manage recipes.
 
 #### Create a new recipe
 
-```http
+```
   POST /api/recipe/recipes
 ```
 
@@ -145,7 +145,7 @@ Recipe App is an API service that developers can use to manage recipes.
 
 #### Get own recipe list
 
-```http
+```
   GET /api/recipe/recipes
 ```
 
@@ -155,7 +155,7 @@ Recipe App is an API service that developers can use to manage recipes.
 
 #### Get own recipe by id
 
-```http
+```
   GET /api/recipe/recipes/${id}
 ```
 | Parameter | Type     | Description                       |
@@ -168,7 +168,7 @@ Recipe App is an API service that developers can use to manage recipes.
 
 #### Update own recipe by id
 
-```http
+```
   PUT /api/recipe/recipes/${id}
 ```
 
@@ -190,7 +190,7 @@ Recipe App is an API service that developers can use to manage recipes.
 
 #### Delete own recipe by id
 
-```http
+```
   DELETE /api/recipe/recipes/${id}
 ```
 
